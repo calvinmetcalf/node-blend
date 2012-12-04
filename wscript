@@ -91,19 +91,7 @@ def _check_jpeg(conf, path):
             msg='Checking for libjpeg at %s' % norm_path):
         # confirm adequate version
         header = os.path.join(inc, jpeg_inc_name)
-        if conf.check(
-                lib='jpeg',
-                uselib_store='JPEG',
-                fragment=jpeg_test_version % header,
-                libpath=lib,
-                includes=inc,
-                msg='Checking for libjpeg version >= %s' % jpeg_min_version
-            ):
-            return True
-        else:
-            _conf_exit(conf, 'jpeg version >= 8 not found (upgrade to http://www.ijg.org/files/jpegsrc.v8d.tar.gz)')
-
-    return False
+    return True
 
 def _check_png(conf, path):
     norm_path = os.path.normpath(os.path.realpath(path))
