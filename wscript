@@ -148,8 +148,8 @@ def configure(conf):
             if found_jpeg:
                 break
 
-    # if not found_jpeg:
-    #    _conf_exit(conf, 'jpeg not found: searched %s \nuse --with-jpeg to point to the location of your jpeg libs and headers' % jpeg_search_paths)
+     if not found_jpeg:
+        _conf_exit(conf, 'jpeg not found: searched %s \nuse --with-jpeg to point to the location of your jpeg libs and headers' % jpeg_search_paths)
 
 
     # png checks
